@@ -23,24 +23,29 @@ export default class Header extends Component {
         <Navbar.Header>
           <LinkContainer to="/">
             <Navbar.Brand>
-              <Link to="/">Bingo</Link>
+              <Link to="/">
+                <img style={{maxHeight: "100%"}} src={"/images/logo/logo-100px.png"} alt=""/>
+              </Link>
             </Navbar.Brand>
           </LinkContainer>
+          <Navbar.Toggle/>
         </Navbar.Header>
-        <Nav>
-          <LinkContainer exact activeClassName="active" to="/">
-            <NavItem>Home</NavItem>
-          </LinkContainer>
+        <Navbar.Collapse>
+          <Nav>
+            <LinkContainer exact activeClassName="active" to="/">
+              <NavItem>Home</NavItem>
+            </LinkContainer>
 
-          <LinkContainer activeClassName="active" to="/about">
-            <NavItem>About</NavItem>
-          </LinkContainer>
+            <LinkContainer activeClassName="active" to="/about">
+              <NavItem>About</NavItem>
+            </LinkContainer>
 
-          <LinkContainer activeClassName="active" to="/contact">
-            <NavItem>Contact</NavItem>
-          </LinkContainer>
+            <LinkContainer activeClassName="active" to="/contact">
+              <NavItem>Contact</NavItem>
+            </LinkContainer>
 
-        </Nav>
+          </Nav>
+        </Navbar.Collapse>
       </Navbar>
     );
   }
