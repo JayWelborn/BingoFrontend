@@ -44,6 +44,10 @@ export default class Header extends Component {
               <NavItem>Contact</NavItem>
             </LinkContainer>
 
+            <LinkContainer activeClassName="active" to="/cards">
+              <NavItem>Cards</NavItem>
+            </LinkContainer>
+
           </Nav>
         </Navbar.Collapse>
       </Navbar>
