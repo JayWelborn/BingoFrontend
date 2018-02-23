@@ -5,8 +5,8 @@ import {
   Navbar,
   Nav,
   NavItem,
-  NavDropdown,
-  MenuItem
+  // NavDropdown,
+  // MenuItem
 } from 'react-bootstrap';
 
 import {Link} from 'react-router-dom';

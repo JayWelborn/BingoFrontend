@@ -1,43 +1,102 @@
-.App {
-  text-align: left;
-  color: #eee; }
+html {
+  height: 100%;
+  overflow-y: scroll;
+  font-size: 100%; }
 
-.App-logo {
-  -webkit-animation: App-logo-spin infinite 20s linear;
-          animation: App-logo-spin infinite 20s linear;
-  height: 80px; }
+body {
+  background-color: #eee;
+  color: #111; }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white; }
+body {
+  line-height: 1.4; }
 
-.App-title {
-  font-size: 1.5em; }
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cutive';
+  margin-bottom: 20px; }
 
-.App-intro {
-  font-size: large; }
+h1 {
+  font-size: 2.98598em; }
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 2.68739rem; } }
+  @media (max-width: 576px) {
+    h1 {
+      font-size: 2.38879rem; } }
 
-footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%; }
+h2 {
+  font-size: 2.48832em; }
+  @media (max-width: 768px) {
+    h2 {
+      font-size: 2.23949rem; } }
+  @media (max-width: 576px) {
+    h2 {
+      font-size: 1.99066rem; } }
 
-@-webkit-keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+h3 {
+  font-size: 2.0736em; }
+  @media (max-width: 768px) {
+    h3 {
+      font-size: 1.86624rem; } }
+  @media (max-width: 576px) {
+    h3 {
+      font-size: 1.65888rem; } }
 
-@keyframes App-logo-spin {
-  from {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg); }
-  to {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg); } }
+h4 {
+  font-size: 1.728em; }
+  @media (max-width: 768px) {
+    h4 {
+      font-size: 1.5552rem; } }
+  @media (max-width: 576px) {
+    h4 {
+      font-size: 1.3824rem; } }
+
+h5 {
+  font-size: 1.44em; }
+  @media (max-width: 768px) {
+    h5 {
+      font-size: 1.296rem; } }
+  @media (max-width: 576px) {
+    h5 {
+      font-size: 1.152rem; } }
+
+h6 {
+  font-size: 1.2em; }
+  @media (max-width: 768px) {
+    h6 {
+      font-size: 1.08rem; } }
+  @media (max-width: 576px) {
+    h6 {
+      font-size: 1rem; } }
+
+body {
+  font-family: 'Lato';
+  font-weight: 300;
+  font-size: 1em; }
+  @media (max-width: 768px) {
+    body {
+      font-size: 1rem; } }
+  @media (max-width: 576px) {
+    body {
+      font-size: 1rem; } }
+
+.navbar-default, .navbar-brand {
+  min-height: 70px; }
+  .navbar-default .navbar-nav > li, .navbar-brand .navbar-nav > li {
+    display: inline-block;
+    height: 70px; }
+    .navbar-default .navbar-nav > li a, .navbar-brand .navbar-nav > li a {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      height: 100%;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+  @media (max-width: 768px) {
+    .navbar-default, .navbar-brand {
+      min-height: 50px; } }
 
 /*# sourceMappingURL=main.css.map */

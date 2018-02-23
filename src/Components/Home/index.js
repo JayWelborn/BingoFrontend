@@ -6,6 +6,9 @@ export default class Home extends Component {
     return (
       <div>
         <h1>Home</h1>
+        <p>
+          This is a body paragraph. asdflkjawe a34 zsd fa sdf aw re SAFD  das f awe.
+        </p>
       </div>
     );
   }
