@@ -10,8 +10,10 @@ export default class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Header />
-          <Main />
+          <div className="page-content">
+            <Header />
+            <Main />
+          </div>
           <Footer />
         </div>
       </BrowserRouter>

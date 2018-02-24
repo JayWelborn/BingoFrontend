@@ -1,10 +1,20 @@
+.card, .footer, .card-inverted, .navbar {
+  -webkit-box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.5); }
+
+.card, .footer, .card-inverted {
+  border-radius: 5px;
+  padding: 30px;
+  display: block;
+  margin-bottom: 5px; }
+
 html {
   height: 100%;
   overflow-y: scroll;
   font-size: 100%; }
 
 body {
-  background-color: #eee;
+  background-color: #F6F3F1;
   color: #111; }
 
 body {
@@ -79,6 +89,37 @@ body {
     body {
       font-size: 1rem; } }
 
+.page-content {
+  min-height: calc(100vh - 50px - 35px); }
+
+.footer {
+  min-height: 50px; }
+
+.card, .footer {
+  background-color: #f8f7f7;
+  width: 30%;
+  margin-bottom: 10px; }
+
+.card-inverted {
+  background-color: #201e35;
+  color: #f8f7f7;
+  width: 30%; }
+
+.card-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+
+.footer {
+  width: 100%;
+  margin-bottom: 0px; }
+
 .navbar-default, .navbar-brand {
   min-height: 70px; }
   .navbar-default .navbar-nav > li, .navbar-brand .navbar-nav > li {
@@ -98,5 +139,8 @@ body {
   @media (max-width: 768px) {
     .navbar-default, .navbar-brand {
       min-height: 50px; } }
+
+.navbar {
+  background-color: #f8f7f7; }
 
 /*# sourceMappingURL=main.css.map */

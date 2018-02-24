@@ -5,7 +5,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer className="footer">
-        <div className="container" style={{margin:"0px auto"}}>
+        <div className="container">
           Footer
         </div>
       </footer>

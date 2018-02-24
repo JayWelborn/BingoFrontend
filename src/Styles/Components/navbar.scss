@@ -1,4 +1,5 @@
 .navbar-default, .navbar-brand {
+
   min-height: 70px;
 
   .navbar-nav > li {
@@ -15,4 +16,9 @@
   @include bp-medium {
     min-height: 50px;
   }
+}
+
+.navbar {
+  @extend %shadow;
+  background-color: $white;
 }

@@ -1,0 +1,6 @@
+.page-content {
+  min-height: calc(100vh - #{$footer-height} - 35px);
+}
+.footer {
+  min-height: $footer-height;
+}
