@@ -17,7 +17,7 @@ export default class BingoCardPreview extends Component {
   }
 
 
-  componentDidMount() {
+  componentWillMount() {
     let creatorURL = this.props.card.creator
 
     // fetch card's creator
@@ -29,24 +29,36 @@ export default class BingoCardPreview extends Component {
     .then(creator => {
       // set creator to current state
       this.setState({creator: creator})
-      console.log(creator)
+      fetch(creator.profile, {
+        method: 'get',
+        headers: {},
+        mode: 'cors'
+      }).then(response => response.json())
+      .then(profile => {
+        this.setState({profile: profile})
+      })
     }) // End fetch
   } // End componentDidMount
 
   render() {
     let card = this.props.card
     let creator = this.state.creator
+    let profile = this.state.profile
     return (
       <div className={
         everyThird(this.props.index)
-        ? "card"
-        : "card-inverted"
-      }>
-        <h5><a href={"/cards/" + card.id}>{card.title}</a></h5>
-        created by:&nbsp;
+        ? "card-preview card"
+        : "card-preview card-inverted"
+        }>
         {
-          creator ?
-          <a href={"/profiles/" + creator.id}>{creator.username}</a>
+          profile && creator
+          ?
+          <span>
+          <img src={profile.picture} alt={creator.username}/>
+            <h5><a href={"/cards/" + card.id}>{card.title}</a></h5>
+            created by:&nbsp;
+            <a href={"/profiles/" + creator.id}>{creator.username}</a>
+          </span>
           :
           <span>loading...</span>
         }

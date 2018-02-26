@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import BingoCardPreview from '../Common/BingoCardPreview'
+import {Button} from 'react-bootstrap'
 
 
 let apiRoot = '';
@@ -14,13 +15,12 @@ export default class Home extends Component {
     super(props);
 
     this.state = {
-      cardList: [],
       userData: {},
     };
   }
 
   // Fetch card list from API when component successfully mounts
-  componentDidMount() {
+  componentWillMount() {
     fetch(apiRoot + 'cards.json' , {
       method: 'get',
       headers: {},
@@ -35,12 +35,25 @@ export default class Home extends Component {
 
 
   render() {
-    let cards = this.state.cardList.slice(0, 10)
+    let cards = this.state.cardList
+
     return (
       <div className="home">
-        <h1>Home</h1>
+        <div className="card jumbotron">
+          <h1>Welcome to <img src={"/images/logo/logo-200px.png"} alt="BINGO"/></h1>
+          <p>
+            Have you ever been stuck in a boring class with nothing to do? Are you looking for a fun party game?
+            Look no further! Thanks to a guy with too much dedication you can make your own bingo cards right here.
+          </p>
+          <Button bsStyle="primary" bsSize="large">
+            Register
+          </Button>
+          <Button bsStyle="primary" bsSize="large">
+            Log In
+          </Button>
+        </div>
         {
-          this.state.cardList ?
+          cards ?
           <div className="card-list">
             {// Map cards to a Card component containing that card's data
               cards.map((card, i) =>

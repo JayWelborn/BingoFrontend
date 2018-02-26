@@ -8,3 +8,15 @@ body {
     background-color: $off-white;
     color: $off-black;
 }
+
+a {
+  color: $blue;
+  text-decoration: none;
+  transition: .15s linear;
+
+  &:hover {
+    color: $red;
+    transition: .15s linear;
+    text-decoration: none;
+  }
+}
