@@ -2,12 +2,13 @@
   h1 {
     margin-bottom: 0px;
   }
-  img {
-    width: 50%;
-  }
   button {
     margin-right: 10px;
     background-color: $blue;
     color: $white;
   }
+}
+
+.jumbotron img {
+  width: 50%;
 }

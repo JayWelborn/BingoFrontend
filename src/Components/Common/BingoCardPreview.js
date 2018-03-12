@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 
 function everyThird(number) {
-  return number % 5
+  return number % 7
 }
 
 export default class BingoCardPreview extends Component {
@@ -39,6 +39,29 @@ export default class BingoCardPreview extends Component {
       })
     }) // End fetch
   } // End componentDidMount
+
+  componentWillReceiveProps(nextProps) {
+    let creatorURL = nextProps.card.creator
+
+    // fetch card's creator
+    fetch(creatorURL, {
+      method: 'get',
+      headers: {},
+      mode: 'cors'
+    }).then(response => response.json())
+    .then(creator => {
+      // set creator to current state
+      this.setState({creator: creator})
+      fetch(creator.profile, {
+        method: 'get',
+        headers: {},
+        mode: 'cors'
+      }).then(response => response.json())
+      .then(profile => {
+        this.setState({profile: profile})
+      })
+    }) // End fetch
+  }
 
   render() {
     let card = this.props.card

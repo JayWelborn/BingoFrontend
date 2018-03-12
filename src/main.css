@@ -125,8 +125,7 @@ body {
   height: 200px; }
   .card-preview img {
     height: 140px;
-    width: 30%;
-    max-width: 140px;
+    width: 140px;
     float: left;
     border-radius: 50%;
     margin: 0px 20px 0px 0px; }
@@ -173,15 +172,29 @@ body {
 .navbar {
   background-color: #f8f7f7; }
 
-.home h1 {
+#card-list-header h1 {
+  display: inline-block;
+  margin-right: 20px;
   margin-bottom: 0px; }
 
-.home img {
-  width: 50%; }
+#card-list-header input {
+  position: relative;
+  bottom: 8px; }
+
+.search-filter {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.2); }
+
+.home h1 {
+  margin-bottom: 0px; }
 
 .home button {
   margin-right: 10px;
   background-color: #0081c7;
   color: #f8f7f7; }
+
+.jumbotron img {
+  width: 50%; }
 
 /*# sourceMappingURL=main.css.map */
