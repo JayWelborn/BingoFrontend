@@ -186,6 +186,14 @@ body {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2); }
 
+.bingo-card .squares {
+  border: 1px solid #111; }
+
+.bingo-card h1 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid #111; }
+
 .home h1 {
   margin-bottom: 0px; }
 

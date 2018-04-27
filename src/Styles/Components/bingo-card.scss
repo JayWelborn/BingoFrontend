@@ -1,0 +1,14 @@
+%has-border {
+  border: 1px solid $off-black;
+}
+
+.bingo-card {
+  h1 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid $off-black;
+  }
+  .squares {
+    @extend %has-border;
+  }
+}
