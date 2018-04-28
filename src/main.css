@@ -186,13 +186,58 @@ body {
   border-radius: 5px;
   border: 1px solid rgba(0, 0, 0, 0.2); }
 
-.bingo-card .squares {
-  border: 1px solid #111; }
-
-.bingo-card h1 {
-  width: 100%;
+.bingo-card, .bingo-card th, .bingo-card td {
+  border: 1px solid #111;
+  padding: 10px;
   text-align: center;
-  border-bottom: 1px solid #111; }
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.bingo-card {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  width: 100%; }
+  @media (max-width: 768px) {
+    .bingo-card {
+      max-width: 300px; } }
+  .bingo-card th {
+    padding: 30px;
+    padding-top: 40px;
+    background-color: #0081c7;
+    color: #F6F3F1;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
+    @media (max-width: 768px) {
+      .bingo-card th {
+        padding: 20px; }
+        .bingo-card th h1 {
+          font-size: 1.728em; } }
+    @media (max-width: 768px) and (max-width: 768px) {
+      .bingo-card th h1 {
+        font-size: 1.5552rem; } }
+    @media (max-width: 768px) and (max-width: 576px) {
+      .bingo-card th h1 {
+        font-size: 1.3824rem; } }
+    .bingo-card th h1 {
+      margin-bottom: 0px; }
+  .bingo-card td {
+    width: 18%;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    cursor: pointer;
+    word-wrap: break-word; }
+    @media (max-width: 768px) {
+      .bingo-card td {
+        font-size: .6rem;
+        padding: 2px; } }
+  .bingo-card tr {
+    height: 7.43008rem; }
+    @media (max-width: 768px) {
+      .bingo-card tr {
+        height: auto; } }
+  .bingo-card .clicked {
+    background-color: #e91649;
+    color: #F6F3F1; }
 
 .home h1 {
   margin-bottom: 0px; }

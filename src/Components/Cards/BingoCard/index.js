@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Square from './Square';
+import VictoryCard from './VictoryCard';
 
 
 let BOARD_SIZE = 5;
@@ -31,28 +32,45 @@ export default class BingoCard extends Component {
 
     this.state = {
         squares: squares,
+        victory: false,
     }
   }
 
-  componentWillMount() {
-
+  handleClick(i, j) {
+    let squares = this.state.squares;
+    squares[i][j].clicked = !squares[i][j].clicked;
+    this.setState({squares: squares})
+    if (checkVictory(squares)) {
+      this.setState({victory: true});
+    } else {
+      this.setState({victory: false});
+    }
   }
 
   render() {
     let card = this.props.card;
+    // unpack squares array, and created table rows of Squares
     let board = this.state.squares.map((row, i) => {
       return (<tr key={i}>{row.map((square, j) => {
-        return <Square data={square.text} key={3 * i + j} />
+        return <Square data={square.text} key={3 * i + j} clicked={square.clicked}
+                       onClick={() => this.handleClick(i, j)}/>
       })}</tr>)
     });
 
+    let victoryCard = this.state.victory ? <VictoryCard/> : ''
+
     return (
-      <table className="card bingo-card">
-        <thead><tr><th colSpan="5"><h1>{card.title}</h1></th></tr></thead>
-        <tbody>
-          {board}
-        </tbody>
-      </table>
+      <div className="card">
+        <table className="bingo-card">
+          <thead><tr>
+            <th colSpan="5"><h1>{card.title}</h1></th>
+          </tr></thead>
+          <tbody>
+            {board}
+          </tbody>
+        </table>
+        {victoryCard}
+      </div>
     );
   }
 }
