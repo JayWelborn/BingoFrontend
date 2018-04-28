@@ -13,6 +13,7 @@ export default class BingoCard extends Component {
     let card = this.props.card;
     let squares = [];
     let count = 0;
+    shuffle(this.props.squares);
 
     // board rows
     for (let i = 0; i < BOARD_SIZE; i++){
@@ -115,4 +116,13 @@ function checkVictory(squares) {
 
   // if any victory status is true now, they've won
   return (diagonalOne || diagonalTwo || horizontal || vertical);
+}
+
+function shuffle(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
 }
