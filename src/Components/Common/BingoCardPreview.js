@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {apiCall} from '../../api.js';
 
 
 function everyThird(number) {
@@ -19,21 +20,15 @@ export default class BingoCardPreview extends Component {
 
   componentWillMount() {
     let creatorURL = this.props.card.creator
+    let method = 'get'
+    let headers = {}
 
     // fetch card's creator
-    fetch(creatorURL, {
-      method: 'get',
-      headers: {},
-      mode: 'cors'
-    }).then(response => response.json())
+    apiCall(creatorURL, method, headers)
     .then(creator => {
       // set creator to current state
       this.setState({creator: creator})
-      fetch(creator.profile, {
-        method: 'get',
-        headers: {},
-        mode: 'cors'
-      }).then(response => response.json())
+      apiCall(creator.profile, method, headers)
       .then(profile => {
         this.setState({profile: profile})
       })
@@ -42,21 +37,15 @@ export default class BingoCardPreview extends Component {
 
   componentWillReceiveProps(nextProps) {
     let creatorURL = nextProps.card.creator
+    let method = 'get';
+    let headers = {};
 
     // fetch card's creator
-    fetch(creatorURL, {
-      method: 'get',
-      headers: {},
-      mode: 'cors'
-    }).then(response => response.json())
+    apiCall(creatorURL, method, headers)
     .then(creator => {
       // set creator to current state
       this.setState({creator: creator})
-      fetch(creator.profile, {
-        method: 'get',
-        headers: {},
-        mode: 'cors'
-      }).then(response => response.json())
+      apiCall(creator.profile, method, headers)
       .then(profile => {
         this.setState({profile: profile})
       })

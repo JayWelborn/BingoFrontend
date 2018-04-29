@@ -2,11 +2,8 @@ import React, { Component } from 'react';
 import BingoCardPreview from '../Common/BingoCardPreview'
 import {Button} from 'react-bootstrap'
 
+import {apiCall, apiRoot} from '../../api.js';
 
-let apiRoot = '';
-if (window.location.href.includes('localhost')) {
-  apiRoot = 'http://localhost:8000/api/';
-}
 
 export default class Home extends Component {
 
@@ -21,15 +18,14 @@ export default class Home extends Component {
 
   // Fetch card list from API when component successfully mounts
   componentWillMount() {
-    fetch(apiRoot + 'cards.json' , {
-      method: 'get',
-      headers: {},
-      mode: 'cors',
-    }).then(response => response.json())
-    .then(cardData => {
+    let url = apiRoot + 'cards.json';
+    let method = 'get';
+    let headers = {};
+
+    apiCall(url, method, headers).then(cardData => {
       // Sort cards by id, newest first
-      let cards = cardData.results.sort(function(a, b) {return b.id - a.id})
-      this.setState({cardList: cards})
+      let cards = cardData.results.sort(function(a, b) {return b.id - a.id});
+      this.setState({cardList: cards});
     });
   }
 

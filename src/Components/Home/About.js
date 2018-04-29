@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 export default class About extends Component {
   render() {
     return (
-      <div class="card">
+      <div className="card">
         <h1>About Bingo</h1>
         <p>
             My name is <a href="ttp/www.jaywelborn.com" target="blank">Jay Welborn</a>.

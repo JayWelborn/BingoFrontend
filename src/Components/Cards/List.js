@@ -3,10 +3,7 @@ import BingoCardPreview from '../Common/BingoCardPreview'
 import SearchFilter from '../Common/SearchFilter'
 
 
-let apiRoot = '';
-if (window.location.href.includes('localhost')) {
-  apiRoot = 'http://localhost:8000/api/';
-}
+import {apiCall, apiRoot} from '../../api.js'
 
 
 export default class List extends Component {
@@ -18,11 +15,11 @@ export default class List extends Component {
   }
 
   componentWillMount() {
-    fetch(apiRoot + 'cards.json' , {
-      method: 'get',
-      headers: {},
-      mode: 'cors',
-    }).then(response => response.json())
+    let url = apiRoot + 'cards.json';
+    let method = 'get';
+    let headers = {};
+
+    apiCall(url, method, headers)
     .then(cardData => {
       // Sort cards by id, newest first
       let cards = cardData.results.sort(function(a, b) {return b.id - a.id})

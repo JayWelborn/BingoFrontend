@@ -15,6 +15,8 @@ import {
   LinkContainer
 } from 'react-router-bootstrap';
 
+import LogIn from './LogIn'
+
 
 export default class Header extends Component {
   render() {
@@ -48,6 +50,10 @@ export default class Header extends Component {
               <NavItem>Cards</NavItem>
             </LinkContainer>
 
+          </Nav>
+
+          <Nav pullRight={true}>
+            <NavItem><LogIn/></NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

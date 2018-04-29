@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
 
-import BingoCard from './BingoCard/'
+import BingoCard from './BingoCard/';
 
-let apiRoot = '';
-if (window.location.href.includes('localhost')) {
-  apiRoot = 'http://localhost:8000/api/';
-}
+import {apiCall} from '../../api.js';
 
 export default class Detail extends Component {
 
@@ -16,14 +13,8 @@ export default class Detail extends Component {
   }
 
   componentWillMount() {
-    fetch(apiRoot +
-         'cards/' +
-         this.props.match.params.id +
-         '.json', {
-      method: 'get',
-      headers: {},
-      mode: 'cors',
-    }).then(response => response.json())
+    apiCall('cards/' + this.props.match.params.id + '.json',
+            'get', {})
     .then(card => {
       this.setState({card: card, squares: card.squares});
     });
