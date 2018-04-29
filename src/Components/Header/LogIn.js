@@ -7,6 +7,7 @@ import {
 import {apiCall, apiRoot} from '../../api.js';
 
 const loginURL = apiRoot + 'api-auth/login/';
+const userURL = apiRoot + 'api-auth/user/';
 
 /**
  * Class to make a login form. Displays username and password fields, and sends
@@ -48,16 +49,29 @@ export default class LogIn extends Component {
     event.preventDefault();
 
     let method = 'post';
-    let header = {
+    let header = new Headers({
       'Content-Type': 'application/json'
-    }
+    })
     let body = JSON.stringify({
       username: this.state.username,
       password: this.state.password
     })
 
-    let response = apiCall(loginURL, method, header, body);
-    console.log(response);
+    apiCall(loginURL, method, header, body)
+    .then(loginData => {
+      this.setState({token: loginData.key})
+
+      method = 'get'
+      header = new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': 'Token ' + loginData.key,
+      })
+
+      apiCall(userURL, method, header, {})
+      .then(userData => {
+        this.setState({user: userData})
+      })
+    })
   }
 
   render() {
