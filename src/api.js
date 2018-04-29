@@ -14,11 +14,12 @@ const apiRoot = getApiRoot();
  * @param {object}  headers  headers for fetching
  * @return {json}            response to api call
  */
-function apiCall(endpoint, method, headers) {
+function apiCall(endpoint, method, headers, body) {
   return fetch(endpoint, {
     method: method,
     headers: headers,
     mode: 'cors',
+    body: body,
   }).then(response => response.json())
 }
 

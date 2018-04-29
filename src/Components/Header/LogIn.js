@@ -1,34 +1,74 @@
 import React, { Component } from 'react';
 
+import {
+  Button
+} from 'react-bootstrap';
 
+import {apiCall, apiRoot} from '../../api.js';
+
+const loginURL = apiRoot + 'api-auth/login/';
+
+/**
+ * Class to make a login form. Displays username and password fields, and sends
+ * handles sending login API call and storing user's auth token.
+ */
 export default class LogIn extends Component {
 
+  /**
+   * Class constructor
+   *
+   * @param props class properties
+   */
   constructor(props) {
     super(props);
-    this.state = {value: ''};
+    // initialize state for placeholder text
+    this.state = {username: 'username'};
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
+  /**
+   * Update state as user types.
+   *
+   * @param  {event} event change event
+   */
   handleChange(event) {
-    this.setState({value: event.target.value});
+    let state = {};
+    state[event.target.name] = event.target.value;
+    this.setState(state);
   }
 
+  /**
+   * Attempt to log user into site
+   *
+   * @param  {event} event submit event
+   */
   handleSubmit(event) {
-    console.log('handleSubmit triggered')
-    alert('A name was submitted: ' + this.state.value);
     event.preventDefault();
+
+    let method = 'post';
+    let header = {
+      'Content-Type': 'application/json'
+    }
+    let body = JSON.stringify({
+      username: this.state.username,
+      password: this.state.password
+    })
+
+    let response = apiCall(loginURL, method, header, body);
+    console.log(response);
   }
 
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
-        <label>
-          Name:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
-        <input type="submit" value="Submit" />
+        <input type="text" placeholder={this.state.username}
+               onChange={this.handleChange}  name="username"/>
+        <input type="password" onChange={this.handleChange} name="password"/>
+        <Button onClick={this.handleSubmit} type="submit" value="Submit">
+          Submit
+        </Button>
       </form>
     );
   }

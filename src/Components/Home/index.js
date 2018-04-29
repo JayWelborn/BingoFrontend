@@ -20,9 +20,8 @@ export default class Home extends Component {
   componentWillMount() {
     let url = apiRoot + 'cards.json';
     let method = 'get';
-    let headers = {};
 
-    apiCall(url, method, headers).then(cardData => {
+    apiCall(url, method).then(cardData => {
       // Sort cards by id, newest first
       let cards = cardData.results.sort(function(a, b) {return b.id - a.id});
       this.setState({cardList: cards});
