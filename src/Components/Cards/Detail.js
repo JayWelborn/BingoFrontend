@@ -7,16 +7,16 @@ import {apiCall} from '../../api.js';
 export default class Detail extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
 
-    this.state = {};
+    this.state = {}
   }
 
   componentWillMount() {
     apiCall('cards/' + this.props.match.params.id + '.json',
             'get', {})
     .then(card => {
-      this.setState({card: card, squares: card.squares});
+      this.setState({card: card, squares: card.squares})
     });
   }
 

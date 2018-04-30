@@ -46,9 +46,9 @@ export default class LogIn extends Component {
    * @param  {event} event submit event
    */
   handleSubmit(event) {
-    event.preventDefault();
+    event.preventDefault()
 
-    let method = 'post';
+    let method = 'post'
     let header = new Headers({
       'Content-Type': 'application/json'
     })
@@ -61,7 +61,7 @@ export default class LogIn extends Component {
     .then(loginData => {
       this.setState({token: loginData.key})
 
-      method = 'get'
+      method = 'get';
       header = new Headers({
         'Content-Type': 'application/json',
         'Authorization': 'Token ' + loginData.key,

@@ -9,15 +9,15 @@ import {apiCall, apiRoot} from '../../api.js'
 export default class List extends Component {
 
   constructor(props) {
-    super(props);
+    super(props)
 
     this.state = {}
   }
 
   componentWillMount() {
-    let url = apiRoot + 'cards.json';
-    let method = 'get';
-    let headers = {};
+    let url = apiRoot + 'cards.json'
+    let method = 'get'
+    let headers = {}
 
     apiCall(url, method, headers)
     .then(cardData => {
