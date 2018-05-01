@@ -7,7 +7,7 @@ const LOG_USER_OUT = 'LOG_USER_OUT'
  * @param  {object} user    user's info
  * @param  {object} profile user's profile info
  */
-export function logUserIn(user, profile, token) {
+function logUserIn(user, profile, token) {
   return {
     type: LOG_USER_IN,
     payload: {
@@ -17,3 +17,12 @@ export function logUserIn(user, profile, token) {
     }
   }
 }
+
+function logUserOut() {
+  return {
+    type: LOG_USER_OUT,
+    payload: {}
+  }
+}
+
+export {LOG_USER_IN, LOG_USER_OUT, logUserIn, logUserOut}

@@ -1,25 +1,12 @@
-import React, { Component } from 'react';
+import React, { Component }    from 'react'
+import {Navbar, Nav, NavItem,} from 'react-bootstrap'
+import {Link}                  from 'react-router-dom'
+import {LinkContainer}         from 'react-router-bootstrap'
 
-// import nav components from react-bootstrap
-import {
-  Navbar,
-  Nav,
-  NavItem,
-  // NavDropdown,
-  // MenuItem
-} from 'react-bootstrap';
-
-import {Link} from 'react-router-dom';
-
-import {
-  LinkContainer
-} from 'react-router-bootstrap';
-
-import LogIn from './LogIn'
-
+import LoginContainer from './LoginContainer'
 
 export default class Header extends Component {
-  render() {
+  render(){
     return (
       <Navbar>
         <Navbar.Header>
@@ -53,7 +40,9 @@ export default class Header extends Component {
           </Nav>
 
           <Nav pullRight={true}>
-            <NavItem><LogIn/></NavItem>
+            <NavItem>
+             <LoginContainer/>
+            </NavItem>
           </Nav>
         </Navbar.Collapse>
       </Navbar>

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import BingoCard from './BingoCard/';
 
-import {apiCall} from '../../api.js';
+import {apiCall} from '../../Utils/api.js';
 
 export default class Detail extends Component {
 

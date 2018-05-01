@@ -46,7 +46,7 @@ const initialState = {
  * @param  {object} state  current state of app
  * @param  {object} action redux action to update state
  */
-function bingoApp(state = initialState, action) {
+export default function bingoApp(state = initialState, action) {
   switch (action.type) {
     case LOG_USER_IN:
       return Object.assign({}, state, {

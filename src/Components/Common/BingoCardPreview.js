@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import {apiCall} from '../../api.js';
+
+import {apiCall} from '../../Utils/api.js';
 
 
 function everyThird(number) {

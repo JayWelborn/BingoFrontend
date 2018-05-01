@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import BingoCardPreview from '../Common/BingoCardPreview'
 import {Button} from 'react-bootstrap'
 
-import {apiCall, apiRoot} from '../../api.js';
+import {apiCall, apiRoot} from '../../Utils/api.js';
 
 
 export default class Home extends Component {

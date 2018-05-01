@@ -3,7 +3,7 @@ import BingoCardPreview from '../Common/BingoCardPreview'
 import SearchFilter from '../Common/SearchFilter'
 
 
-import {apiCall, apiRoot} from '../../api.js'
+import {apiCall, apiRoot} from '../../Utils/api.js'
 
 
 export default class List extends Component {

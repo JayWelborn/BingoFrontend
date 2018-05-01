@@ -1,13 +1,8 @@
 import React, { Component } from 'react';
 
-import {
-  Button
-} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 
-import {apiCall, apiRoot} from '../../api.js';
-
-const loginURL = apiRoot + 'api-auth/login/';
-const userURL = apiRoot + 'api-auth/user/';
+import {login} from '../../Utils/login'
 
 /**
  * Class to make a login form. Displays username and password fields, and sends
@@ -27,6 +22,9 @@ export default class LogIn extends Component {
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+
+    // this prop is a function to execute Redux's logUserIn function
+    this.logUserIn = this.props.logUserIn.bind(this);
   }
 
   /**
@@ -47,33 +45,13 @@ export default class LogIn extends Component {
    */
   handleSubmit(event) {
     event.preventDefault()
-
-    let method = 'post'
-    let header = new Headers({
-      'Content-Type': 'application/json'
-    })
-    let body = JSON.stringify({
-      username: this.state.username,
-      password: this.state.password
-    })
-
-    apiCall(loginURL, method, header, body)
-    .then(loginData => {
-      this.setState({token: loginData.key})
-
-      method = 'get';
-      header = new Headers({
-        'Content-Type': 'application/json',
-        'Authorization': 'Token ' + loginData.key,
-      })
-
-      apiCall(userURL, method, header, {})
-      .then(userData => {
-        this.setState({user: userData})
-      })
-    })
+    login(this.state.username, this.state.password, this.logUserIn)
   }
 
+  /**
+   * Render LogIn form
+   * @return {HTML form} log in form
+   */
   render() {
     return (
       <form onSubmit={this.handleSubmit}>
@@ -81,7 +59,7 @@ export default class LogIn extends Component {
                onChange={this.handleChange}  name="username"/>
         <input type="password" onChange={this.handleChange} name="password"/>
         <Button onClick={this.handleSubmit} type="submit" value="Submit">
-          Submit
+          Log In
         </Button>
       </form>
     );
