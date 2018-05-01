@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 
-
+/**
+ * About page. Sends static HTML for now.
+ */
 export default class About extends Component {
   render() {
     return (

@@ -6,6 +6,9 @@ import Detail from './Detail';
 import Create from './Create';
 
 
+/**
+ * Handle url routing within cards section
+ */
 export default class Cards extends Component {
   render() {
     return (

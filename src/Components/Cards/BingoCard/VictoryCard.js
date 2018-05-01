@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 
 import {Link} from 'react-router-dom';
 
-
+/**
+ * Display a victory message
+ */
 export default class VictoryCard extends Component {
 
   render() {

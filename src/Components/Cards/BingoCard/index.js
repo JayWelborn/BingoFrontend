@@ -6,8 +6,16 @@ import VictoryCard from './VictoryCard';
 
 let BOARD_SIZE = 5;
 
+/**
+ * Game component for making BingoCards interactive
+ */
 export default class BingoCard extends Component {
 
+  /**
+   * Class constructor randomizes order of bingo cards
+   *
+   * @param  {object} props initial properties
+   */
   constructor(props){
     super(props);
     let card = this.props.card;
@@ -37,6 +45,13 @@ export default class BingoCard extends Component {
     }
   }
 
+  /**
+   * Updates state of square in array and checks ot see if game has
+   * been won
+   *
+   * @param  {int} i row in array
+   * @param  {int} j column in array
+   */
   handleClick(i, j) {
     let squares = this.state.squares;
     squares[i][j].clicked = !squares[i][j].clicked;
@@ -48,6 +63,10 @@ export default class BingoCard extends Component {
     }
   }
 
+  /**
+   * Maps state.squares to HTML table for display. Display a victory card
+   * if the game has been won.
+   */
   render() {
     let card = this.props.card;
     // unpack squares array, and created table rows of Squares
@@ -76,6 +95,12 @@ export default class BingoCard extends Component {
   }
 }
 
+/**
+ * Checks to see if current board state represents a "win"
+ *
+ * @param  {object[][]} squares 2d array of squares
+ * @return {boolean}            status of victory
+ */
 function checkVictory(squares) {
 
   // initialize diagonal
@@ -118,6 +143,11 @@ function checkVictory(squares) {
   return (diagonalOne || diagonalTwo || horizontal || vertical);
 }
 
+/**
+ * Shuffle a given array in place
+ *
+ * @param  {array} array
+ */
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     let j = Math.floor(Math.random() * (i + 1));

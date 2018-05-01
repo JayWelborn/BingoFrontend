@@ -5,7 +5,9 @@ import SearchFilter from '../Common/SearchFilter'
 
 import {apiCall, apiRoot} from '../../Utils/api.js'
 
-
+/**
+ * Display a searchable list of bingo cards
+ */
 export default class List extends Component {
 
   constructor(props) {
@@ -14,6 +16,9 @@ export default class List extends Component {
     this.state = {}
   }
 
+  /**
+   * Make api call before component mounts
+   */
   componentWillMount() {
     let url = apiRoot + 'cards.json'
     let method = 'get'
@@ -27,6 +32,9 @@ export default class List extends Component {
     });
   }
 
+  /**
+   * Display card list
+   */
   render() {
     // If there is a filterstring, cards are filtered. Otherwise, the whole list is rendered
     let cards = this.state.filterString

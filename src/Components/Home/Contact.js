@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 
 
+/**
+ * Contact Form
+ */
 export default class Contact extends Component {
   render() {
     return (

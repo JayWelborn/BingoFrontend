@@ -5,6 +5,9 @@ import {LinkContainer}         from 'react-router-bootstrap'
 
 import LoginContainer from './LoginContainer'
 
+/**
+ * Page header. Displays a Bootstrap navbar and login/logout buttons
+ */
 export default class Header extends Component {
   render(){
     return (

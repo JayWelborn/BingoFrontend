@@ -5,9 +5,17 @@ import {Button} from 'react-bootstrap'
 import {apiCall, apiRoot} from '../../Utils/api.js';
 
 
+/**
+ * Home page displayed a list of cards
+ */
 export default class Home extends Component {
 
-  // Initilize state with empty card list and no user data
+  /**
+   * Class constructor. Sets empty userData param in object's state
+   * to display loading message.
+   *
+   * @param  {object} props initial properties
+   */
   constructor(props){
     super(props);
 
@@ -16,7 +24,9 @@ export default class Home extends Component {
     };
   }
 
-  // Fetch card list from API when component successfully mounts
+  /**
+   * Fetch card list from API when component successfully mounts
+   */
   componentWillMount() {
     let url = apiRoot + 'cards.json';
     let method = 'get';

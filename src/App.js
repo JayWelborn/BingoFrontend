@@ -5,6 +5,9 @@ import Footer from './Components/Footer/';
 
 import {BrowserRouter} from 'react-router-dom';
 
+/**
+ * Container for app. Wraps entire app in BrowserRouter for url routing
+ */
 export default class App extends Component {
   render() {
     return (

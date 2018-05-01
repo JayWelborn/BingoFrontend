@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 
 
-// Class for a search box that gets a filter string and passes it to
-// a function provided by the parent. MUST be called with "onTextChange" function.
+/**
+ * Class for a search box that gets a filter string and passes it to
+ * a function provided by the parent. MUST be called with "onTextChange".
+ */
 export default class SearchFilter extends Component {
   render() {
     return (

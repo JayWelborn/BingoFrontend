@@ -4,6 +4,9 @@ import BingoCard from './BingoCard/';
 
 import {apiCall} from '../../Utils/api.js';
 
+/**
+ * Makes API call for card detail API call, and displays card when ready
+ */
 export default class Detail extends Component {
 
   constructor(props) {

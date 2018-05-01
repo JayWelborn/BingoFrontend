@@ -7,6 +7,9 @@ function everyThird(number) {
   return number % 7
 }
 
+/**
+ * Displays a preview of Bingo Card
+ */
 export default class BingoCardPreview extends Component {
 
   // Initialize with empty creator, to be filled by API call
@@ -18,7 +21,9 @@ export default class BingoCardPreview extends Component {
     };
   }
 
-
+  /**
+   * Make API call before component mounts
+   */
   componentWillMount() {
     let creatorURL = this.props.card.creator
     let method = 'get'
@@ -36,6 +41,11 @@ export default class BingoCardPreview extends Component {
     }) // End fetch
   } // End componentDidMount
 
+  /**
+   * Update cards info when the list containing said cards is filtered
+   *
+   * @param  {object} nextProps new card's props
+   */
   componentWillReceiveProps(nextProps) {
     let creatorURL = nextProps.card.creator
     let method = 'get';

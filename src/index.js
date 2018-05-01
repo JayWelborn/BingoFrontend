@@ -11,6 +11,9 @@ import bingoApp from './Redux/reducers'
 
 const store = createStore(bingoApp)
 
+/**
+ * Render app wrapped in Redux Provider
+ */
 ReactDOM.render(
   <Provider store={store}>
     <App/>

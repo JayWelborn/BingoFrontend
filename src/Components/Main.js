@@ -12,6 +12,10 @@ import About from './Home/About';
 import Contact from './Home/Contact';
 import Cards from './Cards/'
 
+/**
+ * Main body component. Handles routing do subordinate components
+ * based on URL
+ */
 class Main extends Component {
   render() {
     return (
