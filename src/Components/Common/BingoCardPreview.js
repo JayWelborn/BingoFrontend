@@ -1,23 +1,41 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import {connect}            from 'react-redux'
 
-import {apiCall} from '../../Utils/api.js';
+import {apiCall} from '../../Utils/api.js'
 
 
-function everyThird(number) {
-  return number % 7
+/**
+ * Make container's props equal to app's state
+ *
+ * @param  {object} state application state
+ * @return {object}       unaltered state
+ */
+function mapStateToProps(state) {
+  return {
+    user: state.currentUser,
+    userLoggedIn: state.userLoggedIn,
+    token: state.token,
+  }
 }
 
 /**
  * Displays a preview of Bingo Card
  */
-export default class BingoCardPreview extends Component {
+class BingoCardPreview extends Component {
 
   // Initialize with empty creator, to be filled by API call
   constructor(props){
     super(props);
 
+    let headers = {}
+
+    if (this.props.userLoggedIn) {
+      headers['Authorization'] = 'Token ' + this.props.token
+    }
+
     this.state = {
-      creator: {}
+      creator: {},
+      headers: headers,
     };
   }
 
@@ -27,7 +45,7 @@ export default class BingoCardPreview extends Component {
   componentWillMount() {
     let creatorURL = this.props.card.creator
     let method = 'get'
-    let headers = {}
+    let headers = this.state.headers
 
     // fetch card's creator
     apiCall(creatorURL, method, headers)
@@ -49,7 +67,7 @@ export default class BingoCardPreview extends Component {
   componentWillReceiveProps(nextProps) {
     let creatorURL = nextProps.card.creator
     let method = 'get';
-    let headers = {};
+    let headers = this.state.headers
 
     // fetch card's creator
     apiCall(creatorURL, method, headers)
@@ -67,11 +85,12 @@ export default class BingoCardPreview extends Component {
     let card = this.props.card
     let creator = this.state.creator
     let profile = this.state.profile
+    let user = this.props.user
     return (
       <div className={
-        everyThird(this.props.index)
-        ? "card-preview card"
-        : "card-preview card-inverted"
+        user && creator.id === user.id
+        ? "card-preview card-inverted"
+        : "card-preview card"
         }>
         {
           profile && creator
@@ -89,3 +108,5 @@ export default class BingoCardPreview extends Component {
     );
   }
 }
+
+export default connect(mapStateToProps)(BingoCardPreview)

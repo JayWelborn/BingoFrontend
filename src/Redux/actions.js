@@ -6,8 +6,10 @@ const LOG_USER_OUT = 'LOG_USER_OUT'
  *
  * @param  {object} user    user's info
  * @param  {object} profile user's profile info
+ * @param  {string} token   user's authentication token
  */
 function logUserIn(user, profile, token) {
+  console.log(token)
   return {
     type: LOG_USER_IN,
     payload: {

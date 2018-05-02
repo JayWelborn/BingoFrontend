@@ -23,8 +23,8 @@ function mapStateToProps(state) {
  */
 function mapDispatchToProps(dispatch) {
   return {
-    logUserIn: (username, password) => {
-      dispatch(logUserIn(username, password))
+    logUserIn: (username, password, token) => {
+      dispatch(logUserIn(username, password, token))
     },
     logUserOut: () => {
       dispatch(logUserOut())

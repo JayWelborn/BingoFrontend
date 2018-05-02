@@ -24,12 +24,10 @@ export function login(username, password, logUserIn) {
     password: password,
   })
 
-  let token
-
   // initial api call to log user in
   apiCall(loginURL, method, header, body)
   .then(loginData => {
-    token = loginData.key
+    const token = loginData.key
 
     method = 'get'
     header = new Headers({
@@ -43,7 +41,7 @@ export function login(username, password, logUserIn) {
       apiCall(user.profile, method, header, {})
       .then(profile => {
         // update app state to represent logged in user
-        logUserIn(user, profile, token)
+        logUserIn(user, profile, loginData.key)
       })
     })
   })
