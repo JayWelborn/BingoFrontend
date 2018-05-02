@@ -8,7 +8,7 @@ import React, { Component } from 'react';
 export default class SearchFilter extends Component {
   render() {
     return (
-      <input className="search-filter"
+      <input className="text-field"
              type="text"
              onKeyUp={event => this.props.onTextChange(event.target.value)}
              placeholder="search"
