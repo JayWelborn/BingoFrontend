@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import BingoCard from './BingoCard/';
+import BingoCard from './BingoCard';
 import Loader from '../Common/Loader'
 
 import {apiCall, apiRoot} from '../../Utils/api.js';

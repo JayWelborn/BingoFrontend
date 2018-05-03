@@ -8,6 +8,18 @@
   display: block;
   margin-bottom: 5px; }
 
+@-webkit-keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
+@keyframes fade {
+  0% {
+    opacity: 0; }
+  100% {
+    opacity: 1; } }
+
 html {
   height: 100%;
   overflow-y: scroll;
@@ -131,8 +143,7 @@ body {
   background-color: #201e35;
   color: #F6F3F1; }
   .card-inverted a {
-    color: #f8f7f7;
-    font-weight: 500; }
+    color: #f8f7f7; }
     .card-inverted a:hover {
       color: #CCC6C2; }
 
@@ -255,7 +266,8 @@ body {
         height: auto; } }
   .bingo-card .clicked {
     background-color: #e91649;
-    color: #F6F3F1; }
+    color: #F6F3F1;
+    font-weight: bold; }
 
 #login input {
   margin: 2px;
@@ -303,12 +315,12 @@ body {
       -webkit-animation: bounce 1s ease-in-out infinite;
               animation: bounce 1s ease-in-out infinite; }
     .loader span:nth-child(2) {
-      -webkit-animation: bounce 1s ease-in-out 0.33s infinite;
-              animation: bounce 1s ease-in-out 0.33s infinite; }
+      -webkit-animation: bounce 1s ease-in-out 0.25s infinite;
+              animation: bounce 1s ease-in-out 0.25s infinite; }
     .loader span:nth-child(3) {
       left: 15px;
-      -webkit-animation: bounce 1s ease-in-out 0.66s infinite;
-              animation: bounce 1s ease-in-out 0.66s infinite; }
+      -webkit-animation: bounce 1s ease-in-out 0.5s infinite;
+              animation: bounce 1s ease-in-out 0.5s infinite; }
 
 @-webkit-keyframes bounce {
   0%, 75%, 100% {
@@ -329,6 +341,37 @@ body {
     -webkit-transform: translateY(-30px) scale(1.2);
             transform: translateY(-30px) scale(1.2);
     background-color: #e91649; } }
+
+#card-create label, #card-create .text-field.header-field, #card-create .text-field, #card-create button {
+  margin: 2px 3px; }
+
+#card-create {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-bottom: 20px; }
+  #card-create span {
+    display: inline-block;
+    width: 50%; }
+  #card-create label {
+    text-align: right; }
+  #card-create .text-field.header-field {
+    width: 75%;
+    margin-bottom: 10px; }
+  #card-create .text-field {
+    width: 24%; }
+  #card-create button {
+    margin-top: 10px; }
 
 .home h1 {
   margin-bottom: 0px; }

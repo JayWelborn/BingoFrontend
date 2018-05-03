@@ -1,0 +1,38 @@
+%form-child {
+  margin: 2px 3px;
+}
+
+#card-create {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-between;
+
+  span {
+    display: inline-block;
+    width: 50%;
+  }
+
+  label {
+    @extend %form-child;
+    text-align: right;
+  }
+
+  .text-field.header-field {
+    @extend %form-child;
+    width: 75%;
+    margin-bottom: 10px;
+  }
+
+  .text-field {
+    @extend %form-child;
+    width: 24%
+  }
+
+  button {
+    @extend %form-child;
+    margin-top: 10px;
+  }
+
+  margin-bottom: 20px;
+}

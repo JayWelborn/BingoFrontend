@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 import {Button} from 'react-bootstrap'
 
 import CardList from '../Common/CardList'
 
-import {apiCall, apiRoot} from '../../Utils/api.js';
+import {apiCall, apiRoot} from '../../Utils/api.js'
 
 
 /**
@@ -29,13 +29,13 @@ export default class Home extends Component {
    * Fetch card list from API when component successfully mounts
    */
   componentWillMount() {
-    let url = apiRoot + 'cards.json';
-    let method = 'get';
+    let url = apiRoot + 'cards.json'
+    let method = 'get'
 
     apiCall(url, method).then(cardData => {
       // Sort cards by id, newest first
-      let cards = cardData.results.sort(function(a, b) {return b.id - a.id});
-      this.setState({cardList: cards});
+      let cards = cardData.results.sort(function(a, b) {return b.id - a.id})
+      this.setState({cardList: cards})
     });
   }
 

@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+import Loader           from './Loader'
 import BingoCardPreview from './BingoCardPreview'
 
 export default class CardList extends Component {
@@ -19,7 +20,7 @@ export default class CardList extends Component {
             }
           </div>
           :
-          <h3>Loading...</h3>
+          <Loader />
         }
       </div>
     );

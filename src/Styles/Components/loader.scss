@@ -17,12 +17,12 @@
     }
 
     &:nth-child(2) {
-      animation: bounce 1s ease-in-out 0.33s infinite;
+      animation: bounce 1s ease-in-out 0.25s infinite;
     }
 
     &:nth-child(3) {
       left: 15px;
-      animation: bounce 1s ease-in-out 0.66s infinite;
+      animation: bounce 1s ease-in-out 0.5s infinite;
     }
   }
 }

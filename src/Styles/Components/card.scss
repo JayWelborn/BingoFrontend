@@ -8,9 +8,10 @@
   @extend %card-base;
   background-color: $dark;
   color: $off-white;
+
   a {
     color: $white;
-    font-weight: 500;
+
     &:hover {
       color: $light-gray;
     }

@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom'
 
 import List from './List'
 import Detail from './Detail'
-import Create from './Create'
+import Create from './Create/'
 import MyCards from './MyCards'
 
 
