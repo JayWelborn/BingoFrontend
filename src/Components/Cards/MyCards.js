@@ -41,11 +41,10 @@ class MyCards extends Component {
       apiCall(urls[i], method, headers)
       .then(cardData => {
         cards.push(cardData)
+        cards = cards.sort(function(a, b) {return b.id - a.id})
         this.setState({cardList: cards})
       })
     }
-    cards = cards.sort(function(a, b) {return b.id - a.id})
-    this.setState({cardList: cards})
   }
 
   /**

@@ -18,7 +18,7 @@ export default class Profile extends Component {
            <a href="/cards/mine">My Cards</a>
          </li>
          <li>
-           <a href="/cards/new">
+           <a href="/cards/create">
             New Card
            </a>
          </li>
