@@ -1,0 +1,22 @@
+$gutter: 10px;
+
+.profile-sidebar {
+  display: flex;
+  flex-flow: column;
+  text-align: right;
+  max-width: 20%;
+  width: 160px;
+  padding: $gutter;
+  padding-top: 30px;
+
+  img {
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: auto;
+  }
+
+  ul {
+    list-style-type: none;
+  }
+}

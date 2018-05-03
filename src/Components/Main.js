@@ -14,7 +14,7 @@ import Cards from './Cards/'
 
 /**
  * Main body component. Handles routing do subordinate components
- * based on URL
+ * based on URL.
  */
 class Main extends Component {
   render() {

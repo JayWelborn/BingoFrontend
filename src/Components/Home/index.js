@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import BingoCardPreview from '../Common/BingoCardPreview'
 import {Button} from 'react-bootstrap'
+
+import CardList from '../Common/CardList'
 
 import {apiCall, apiRoot} from '../../Utils/api.js';
 
@@ -57,20 +58,7 @@ export default class Home extends Component {
             Log In
           </Button>
         </div>
-        {
-          cards ?
-          <div className="card-list">
-            {// Map cards to a Card component containing that card's data
-              cards.map((card, i) =>
-                <BingoCardPreview
-                  card={card} index={i} key={i}
-                />
-              ) // End map
-            }
-          </div>
-          :
-          <h3>Loading...</h3>
-        }
+        <CardList cards={cards} />
       </div>
     );
   }

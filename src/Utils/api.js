@@ -21,7 +21,9 @@ function apiCall(endpoint, method, headers={}, body={}) {
     headers: headers,
     mode: 'cors',
     body: body,
-  }).then(response => response.json())
+  }).then(response => {
+    return response.json()
+  })
 }
 
 export {apiCall, apiRoot};

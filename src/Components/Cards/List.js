@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import BingoCardPreview from '../Common/BingoCardPreview'
-import SearchFilter from '../Common/SearchFilter'
 
+import SearchFilter from '../Common/SearchFilter'
+import CardList from '../Common/CardList'
 
 import {apiCall, apiRoot} from '../../Utils/api.js'
 
@@ -49,21 +49,7 @@ export default class List extends Component {
           <h1>Bingo Cards</h1>
           <SearchFilter onTextChange={text => this.setState({filterString: text})} />
         </div>
-
-        {
-          cards ?
-          <div className="card-list">
-            {// Map cards to a Card component containing that card's data
-              cards.map((card, i) =>
-                <BingoCardPreview
-                  card={card} index={i} key={i}
-                />
-              ) // End map
-            }
-          </div>
-          :
-          <h3>Loading...</h3>
-        }
+        <CardList cards={cards} />
       </div>
     );
   }

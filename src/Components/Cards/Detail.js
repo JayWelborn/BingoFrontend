@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import BingoCard from './BingoCard/';
 
-import {apiCall} from '../../Utils/api.js';
+import {apiCall, apiRoot} from '../../Utils/api.js';
 
 /**
  * Makes API call for card detail API call, and displays card when ready
@@ -16,8 +16,11 @@ export default class Detail extends Component {
   }
 
   componentWillMount() {
-    apiCall('cards/' + this.props.match.params.id + '.json',
-            'get', {})
+    let url = apiRoot + 'cards/' + this.props.match.params.id + '.json'
+    let method = 'get'
+    let headers = {}
+
+    apiCall(url, method, headers)
     .then(card => {
       this.setState({card: card, squares: card.squares})
     });
