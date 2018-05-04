@@ -366,8 +366,8 @@ body {
   min-height: 200px;
   width: 50%;
   height: 50%;
-  -webkit-animation: slide-up 1s ease-in-out;
-          animation: slide-up 1s ease-in-out;
+  -webkit-animation: slide-up 800ms ease-in-out;
+          animation: slide-up 800ms ease-in-out;
   position: absolute;
   top: 25%;
   left: 25%;
@@ -385,11 +385,17 @@ body {
           align-items: center;
   -webkit-box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5);
           box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); }
+  .victory h1, .victory h5 {
+    margin: 0px; }
+  .victory img {
+    max-height: 150px; }
 
 @-webkit-keyframes slide-up {
   0% {
-    -webkit-transform: translateY(200px) scale(0.1);
-            transform: translateY(200px) scale(0.1);
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateY(200px) scale(0.0001);
+            transform: translateY(200px) scale(0.0001);
     opacity: 0; }
   50% {
     opacity: 1; }
@@ -399,12 +405,16 @@ body {
   100% {
     -webkit-transform: translateY(0px) scale(1);
             transform: translateY(0px) scale(1);
-    opacity: 1; } }
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); } }
 
 @keyframes slide-up {
   0% {
-    -webkit-transform: translateY(200px) scale(0.1);
-            transform: translateY(200px) scale(0.1);
+    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+    -webkit-transform: translateY(200px) scale(0.0001);
+            transform: translateY(200px) scale(0.0001);
     opacity: 0; }
   50% {
     opacity: 1; }
@@ -414,7 +424,9 @@ body {
   100% {
     -webkit-transform: translateY(0px) scale(1);
             transform: translateY(0px) scale(1);
-    opacity: 1; } }
+    opacity: 1;
+    -webkit-box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); } }
 
 .home h1 {
   margin-bottom: 0px; }
