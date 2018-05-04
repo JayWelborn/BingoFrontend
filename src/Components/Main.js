@@ -1,15 +1,15 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
 // router imports
 import {
   Switch,
   Route
-} from 'react-router-dom';
+} from 'react-router-dom'
 
 // import components
-import Home from './Home/';
-import About from './Home/About';
-import Contact from './Home/Contact';
+import Home from './Home/'
+import About from './Home/About'
+import Contact from './Home/Contact'
 import Cards from './Cards/'
 import Registration from './Registration/'
 

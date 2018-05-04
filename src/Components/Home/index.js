@@ -56,7 +56,7 @@ class Home extends Component {
             ''
             :
             <div>
-              <Link to="/registration/register/">
+              <Link to="/registration/">
                 <Button bsStyle="primary" bsSize="large">
                   Register
                 </Button>

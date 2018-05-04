@@ -1,13 +1,16 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
+import {Switch, Route} from 'react-router-dom'
 
-import Loader from '../Common/Loader'
+import RegistrationPage from './RegistrationPage'
+import LogInPage from './LogInPage'
 
 export default class Registration extends Component {
   render() {
     return (
-      <div className="card">
-        <Loader />
-      </div>
+      <Switch>
+        <Route exact path="/registration" component={RegistrationPage} />
+        <Route path="/registration/login" component={LogInPage} />
+      </Switch>
     );
   }
 }
