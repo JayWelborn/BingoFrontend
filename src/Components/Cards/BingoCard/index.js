@@ -80,15 +80,17 @@ export default class BingoCard extends Component {
     let victoryCard = this.state.victory ? <VictoryCard/> : ''
 
     return (
-      <div className="card">
-        <table className="bingo-card">
-          <thead><tr>
-            <th colSpan="5"><h1>{card.title}</h1></th>
-          </tr></thead>
-          <tbody>
-            {board}
-          </tbody>
-        </table>
+      <div>
+        <div className="card">
+          <table className="bingo-card">
+            <thead><tr>
+              <th colSpan="5"><h1>{card.title}</h1></th>
+            </tr></thead>
+            <tbody>
+              {board}
+            </tbody>
+          </table>
+        </div>
         {victoryCard}
       </div>
     );

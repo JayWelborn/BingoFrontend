@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import {Button} from 'react-bootstrap'
+import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
 import CardList from '../Common/CardList'
 
@@ -9,11 +11,10 @@ import {apiCall, apiRoot} from '../../Utils/api.js'
 /**
  * Home page displayed a list of cards
  */
-export default class Home extends Component {
+class Home extends Component {
 
   /**
-   * Class constructor. Sets empty userData param in object's state
-   * to display loading message.
+   * Class constructor.
    *
    * @param  {object} props initial properties
    */
@@ -21,7 +22,6 @@ export default class Home extends Component {
     super(props);
 
     this.state = {
-      userData: {},
     };
   }
 
@@ -51,15 +51,34 @@ export default class Home extends Component {
             Have you ever been stuck in a boring class with nothing to do? Are you looking for a fun party game?
             Look no further! Thanks to a guy with too much dedication you can make your own bingo cards right here.
           </p>
-          <Button bsStyle="primary" bsSize="large">
-            Register
-          </Button>
-          <Button bsStyle="primary" bsSize="large">
-            Log In
-          </Button>
+          {
+            this.props.userLoggedIn ?
+            ''
+            :
+            <div>
+              <Link to="/registration/register/">
+                <Button bsStyle="primary" bsSize="large">
+                  Register
+                </Button>
+              </Link>
+              <Link to="/registration/login/">
+                <Button bsStyle="primary" bsSize="large">
+                  Log In
+                </Button>
+              </Link>
+            </div>
+          }
         </div>
         <CardList cards={cards} />
       </div>
     );
   }
 }
+
+function mapStateToProps(state) {
+  return {
+    userLoggedIn: state.userLoggedIn,
+  }
+}
+
+export default connect(mapStateToProps)(Home)

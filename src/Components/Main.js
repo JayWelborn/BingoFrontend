@@ -11,6 +11,7 @@ import Home from './Home/';
 import About from './Home/About';
 import Contact from './Home/Contact';
 import Cards from './Cards/'
+import Registration from './Registration/'
 
 /**
  * Main body component. Handles routing do subordinate components
@@ -25,6 +26,7 @@ class Main extends Component {
           <Route path="/about" component={About} />
           <Route path="/contact" component={Contact} />
           <Route path="/cards" component={Cards} />
+          <Route path="/registration" component={Registration} />
         </Switch>
       </main>
     );
