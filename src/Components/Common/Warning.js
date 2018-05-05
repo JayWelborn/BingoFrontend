@@ -23,8 +23,13 @@ export default class Warning extends Component {
           <p>
             {this.props.message}
           </p>
+          <Button bsStyle={this.props.cat} bsSize="small" onClick={this.handleDismiss}>
+            Dismiss
+          </Button>
         </Alert>
       )
+    } else {
+      return null
     }
   }
 }
