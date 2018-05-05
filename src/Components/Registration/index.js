@@ -9,7 +9,7 @@ export default class Registration extends Component {
     return (
       <Switch>
         <Route exact path="/registration" component={RegistrationPage} />
-        <Route path="/registration/login" component={LogInPage} />
+        <Route exact path="/registration/login" component={LogInPage} />
       </Switch>
     );
   }

@@ -8,4 +8,10 @@
     border-radius: 5px;
     border: 1px solid $gray;
   }
+
+  @include bp-large {
+    input {
+      width: 94px;
+    }
+  }
 }
