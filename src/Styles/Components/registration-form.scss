@@ -29,3 +29,7 @@
     }
   }
 }
+
+#login-form {
+  @extend #registration-form
+}

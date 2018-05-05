@@ -3,7 +3,6 @@ import {Button} from 'react-bootstrap'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
-import {apiRoot, apiCall} from '../../Utils/api.js'
 import {validatePasswords} from '../../Utils/validatePasswords'
 import {validateRegistrationData, register} from '../../Utils/register'
 import {logUserIn} from '../../Redux/actions'
@@ -17,11 +16,12 @@ class RegistrationPage extends Component {
   constructor(props){
       super(props);
 
-      this.state = {password1: '', password2: ''}
       this.handleChange = this.handleChange.bind(this)
       this.getValidationState = this.getValidationState.bind(this)
       this.handleSubmit = this.handleSubmit.bind(this)
       this.logUserIn = this.props.logUserIn.bind(this)
+
+      this.state = {password1: '', password2: ''}
   }
 
   handleChange(event) {
