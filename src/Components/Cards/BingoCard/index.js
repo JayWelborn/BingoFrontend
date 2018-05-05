@@ -4,7 +4,7 @@ import Square from './Square';
 import VictoryCard from './VictoryCard';
 
 
-let BOARD_SIZE = 5;
+const BOARD_SIZE = 5;
 
 /**
  * Game component for making BingoCards interactive

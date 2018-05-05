@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import {Button} from 'react-bootstrap'
 
 import {validateSquares} from '../../../Utils/validateSquares'
-import {apiCall, apiRoot} from '../../../Utils/api'
 
 
 export default class CardForm extends Component {
@@ -31,13 +30,12 @@ export default class CardForm extends Component {
   handleChange(event) {
     let state = {};
     state[event.target.name] = event.target.value
-    console.log(state)
     this.setState(state)
   }
 
   handleSquareChange(event) {
     let squares = this.state.squares
-    let i = parseInt(event.target.name)
+    let i = parseInt(event.target.name, 10)
     squares[i] = {text: event.target.value}
     this.setState({squares: squares})
   }
