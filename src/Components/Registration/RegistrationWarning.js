@@ -27,13 +27,15 @@ export default class RegistrationWarning extends Component {
   render() {
     if (this.state.show) {
       return (
-        <Alert bsStyle="danger">
+        <Alert bsStyle="warning">
           <h6>Uh-Oh</h6>
           <p>
             <strong>Username</strong> and <strong>Email</strong> are
             required. <strong>Password</strong> must have at least 8
             characters.
           </p>
+          <br/>
+          <Button bsStyle="warning" onClick={this.handleDismiss}>Dismiss</Button>
         </Alert>
       )
     }

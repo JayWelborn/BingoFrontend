@@ -4,11 +4,11 @@ import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 import {validatePasswords} from '../../Utils/validatePasswords'
-import {validateRegistrationData, register} from '../../Utils/register'
+import {validateRegistrationData, listWarnings, register} from '../../Utils/register'
 import {logUserIn} from '../../Redux/actions'
 
 import FieldGroup, {PasswordGroup} from '../Common/Forms/FieldGroup'
-import RegistrationWarning from './RegistrationWarning'
+import Warning from '../Common/Warning'
 
 
 class RegistrationPage extends Component {
@@ -42,7 +42,8 @@ class RegistrationPage extends Component {
     if (validateRegistrationData(data)) {
       register(data, this.logUserIn)
     } else {
-      this.setState({registrationFailed: true})
+      let warnings = listWarnings(data)
+      this.setState({registrationFailed: true, warnings: warnings})
     }
   }
 
@@ -51,16 +52,21 @@ class RegistrationPage extends Component {
   }
 
   render() {
+    if (this.state.registrationFailed) {
+      var alerts = []
+      let i = 0
+      for (var property in this.state.warnings) {
+        alerts.push(<Warning cat="warning" message={this.state.warnings[property]} key={i}/>)
+        i++
+      }
+    }
     if (this.props.userLoggedIn) {
       return(<Redirect to="/" />)
     } else {
       return (
         <div className="card">
           <h1>Register</h1>
-          {
-            this.state.registrationFailed &&
-            <RegistrationWarning />
-          }
+          {alerts}
           <form id="registration-form" onSubmit={this.handleSubmit}>
             <FieldGroup
               id="username" type="text" label="Username"

@@ -30,3 +30,19 @@ export function validateRegistrationData(data) {
   }
   return true
 }
+
+export function listWarnings(data) {
+  let warnings = {}
+
+  for (var property in data) {
+    if (!property || data[property] === '' || data[property] === undefined) {
+      let capitalized = property.charAt(0).toUpperCase() + property.slice(1)
+      warnings[property] = capitalized + ' is required.'
+    }
+  }
+
+  if (data.password1 !== data.password2) {
+    warnings['passwordMismatch'] = 'Passwords do not match.'
+  }
+  return warnings
+}
