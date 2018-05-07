@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {Switch, Route} from 'react-router-dom'
 
 import MyAccount from './MyAccount'
-import MyProfile from './MyProfile'
+import MyProfile from './MyProfile/'
 import ProfileList from './ProfileList'
 import ProfileDetail from './ProfileDetail'
 
