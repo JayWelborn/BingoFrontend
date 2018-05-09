@@ -25,7 +25,7 @@
 // }
 
 import {
-  LOG_USER_IN, LOG_USER_OUT
+  LOG_USER_IN, LOG_USER_OUT, UPDATE_PROFILE
 } from './actions'
 
 
@@ -47,7 +47,9 @@ const initialState = {
  * @param  {object} action redux action to update state
  */
 export default function bingoApp(state = initialState, action) {
+
   switch (action.type) {
+
     case LOG_USER_IN:
       return Object.assign({}, state, {
         userLoggedIn: true,
@@ -55,8 +57,15 @@ export default function bingoApp(state = initialState, action) {
         currentProfile: action.payload.profile,
         token: action.payload.token,
       })
+
     case LOG_USER_OUT:
       return initialState
+
+    case UPDATE_PROFILE:
+      return Object.assign({}, state, {
+        currentProfile: action.payload.profile
+      })
+
     default:
       return state
   }

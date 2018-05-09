@@ -1,5 +1,6 @@
-const LOG_USER_IN = 'LOG_USER_IN'
-const LOG_USER_OUT = 'LOG_USER_OUT'
+export const LOG_USER_IN = 'LOG_USER_IN'
+export const LOG_USER_OUT = 'LOG_USER_OUT'
+export const UPDATE_PROFILE = 'UPDATE_PROFILE'
 
 /**
  * Create new action to log in a given user
@@ -8,8 +9,7 @@ const LOG_USER_OUT = 'LOG_USER_OUT'
  * @param  {object} profile user's profile info
  * @param  {string} token   user's authentication token
  */
-function logUserIn(user, profile, token) {
-  console.log(token)
+export function logUserIn(user, profile, token) {
   return {
     type: LOG_USER_IN,
     payload: {
@@ -20,11 +20,18 @@ function logUserIn(user, profile, token) {
   }
 }
 
-function logUserOut() {
+export function logUserOut() {
   return {
     type: LOG_USER_OUT,
     payload: {}
   }
 }
 
-export {LOG_USER_IN, LOG_USER_OUT, logUserIn, logUserOut}
+export function updateProfile(profile) {
+  return {
+    type: UPDATE_PROFILE,
+    payload: {
+      profile: profile
+    }
+  }
+}

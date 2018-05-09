@@ -3,8 +3,10 @@ import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
 
 import ProfileForm from './ProfileForm'
+import Warning from '../../Common/Warning'
 
 import {apiCall} from '../../../Utils/api'
+import {updateProfile} from '../../../Redux/actions'
 
 
 class MyProfile extends Component {
@@ -16,6 +18,7 @@ class MyProfile extends Component {
       submitted: false,
     }
     this.submitForm = this.submitForm.bind(this)
+    this.updateProfile = this.props.updateProfile.bind(this)
   }
 
   submitForm(data) {
@@ -32,7 +35,8 @@ class MyProfile extends Component {
     }
     apiCall(url, method, headers, body)
     .then(response => {
-      console.log(response)
+      this.updateProfile(response)
+      this.setState({submitted: true})
     })
   }
 
@@ -45,8 +49,9 @@ class MyProfile extends Component {
     }
     return (
       <div className="card">
+        {this.state.submitted && <Warning cat='success' message='Profile Updated' />}
         <h1>{user.username}</h1>
-        <ProfileForm user={user} profile={profile} submitForm={this.submitForm}/>
+        <ProfileForm profile={profile} submitForm={this.submitForm}/>
       </div>
     );
   }
@@ -56,4 +61,12 @@ function mapStateToProps(state) {
   return state
 }
 
-export default connect(mapStateToProps)(MyProfile)
+function mapDispatchToProps(dispatch) {
+  return {
+    updateProfile: (profile) => {
+      dispatch(updateProfile(profile))
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(MyProfile)
