@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
-import {Button} from 'react-bootstrap'
+import {Form} from 'react-bootstrap'
 
-import FieldGroup from '../../Common/Forms/FieldGroup'
+import {HorizontalGroup, HorizontalButton} from '../../Common/Forms/FieldGroup'
 
 
 export default class ProfileForm extends Component {
@@ -11,7 +11,6 @@ export default class ProfileForm extends Component {
 
     this.state = {
       about_me: this.props.profile.about_me,
-      picture: this.props.profile.picture,
       website: this.props.profile.website
     }
     this.handleChange = this.handleChange.bind(this)
@@ -19,7 +18,6 @@ export default class ProfileForm extends Component {
   }
 
   handleChange(event) {
-    event.preventDefault()
     let state = {}
     state[event.target.id] = event.target.value
     this.setState(state)
@@ -27,19 +25,25 @@ export default class ProfileForm extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    let data = this.state
-    console.log(data)
+    this.props.submitForm(this.state)
   }
 
   render() {
-    let user = this.props.user
-    let profile = this.props.profile
+
     return (
-      <form id="profile-update" onSubmit={this.props.submitForm}>
-        <FieldGroup
-          id="about" type="textarea" label="About Me"
-          placeholder={this.state.about_me}  onChange={this.handleChange}/>
-      </form>
+      <Form horizontal id="profile-update" onSubmit={this.handleSubmit}>
+        <HorizontalGroup
+          id="about" componentClass="textarea" label="About Me" rows={4} style={{resize: 'none'}}
+          defaultValue={this.state.about_me}  onChange={this.handleChange}/>
+        <HorizontalGroup
+          id="picture" type="file" label="Profile Picture"
+          help="Leave blank to keep your current profile picture"
+          onChange={this.handleChange} />
+        <HorizontalGroup
+          id="website" type="text" label="Website"
+          defaultValue={this.state.website} onChange={this.handleChange} />
+        <HorizontalButton value="Update Profile" />
+      </Form>
     );
   }
 }
