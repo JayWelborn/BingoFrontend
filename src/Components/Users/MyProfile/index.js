@@ -37,10 +37,12 @@ class MyProfile extends Component {
       this.updateProfile(response)
       this.setState({submitted: true})
     })
+    .catch(error => {
+      console.log(error)
+    })
   }
 
   render() {
-    let user = this.props.currentUser
     let profile = this.props.currentProfile
 
     if (!this.props.userLoggedIn) {
