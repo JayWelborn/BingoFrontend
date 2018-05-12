@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import {Redirect} from 'react-router-dom'
+import {Col} from 'react-bootstrap'
 
 import ProfileForm from './ProfileForm'
 import Warning from '../../Common/Warning'
@@ -29,8 +30,6 @@ class MyProfile extends Component {
     }
     let body = new FormData()
     for (var key in data) {
-      console.log(key)
-      console.log(data[key])
       body.append(key, data[key])
     }
     apiCall(url, method, headers, body)
@@ -50,7 +49,9 @@ class MyProfile extends Component {
     return (
       <div className="card">
         {this.state.submitted && <Warning cat='success' message='Profile Updated' />}
-        <h1>{user.username}</h1>
+        <Col smOffset={2} sm={10}>
+          <h1>My Profile</h1>
+        </Col>
         <ProfileForm profile={profile} submitForm={this.submitForm}/>
       </div>
     );

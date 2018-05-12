@@ -25,7 +25,7 @@
 // }
 
 import {
-  LOG_USER_IN, LOG_USER_OUT, UPDATE_PROFILE
+  LOG_USER_IN, LOG_USER_OUT, UPDATE_USER, UPDATE_PROFILE
 } from './actions'
 
 
@@ -60,6 +60,11 @@ export default function bingoApp(state = initialState, action) {
 
     case LOG_USER_OUT:
       return initialState
+
+    case UPDATE_USER:
+      return Object.assign({}, state, {
+        currentUser: action.payload.user
+      })
 
     case UPDATE_PROFILE:
       return Object.assign({}, state, {
