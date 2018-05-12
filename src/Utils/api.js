@@ -29,6 +29,7 @@ function apiCall(endpoint, method, headers={}, body={}) {
 
 function handleErrors(response) {
   if (!response.ok) {
+    console.log(response.json())
     throw Error(response.statusText)
   }
   return response

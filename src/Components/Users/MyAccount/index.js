@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import {Redirect} from 'react-router-dom'
-import {Col} from 'react-bootstrap'
+import {Redirect, Link} from 'react-router-dom'
+import {Col, Button} from 'react-bootstrap'
 
 import MyAccountForm from './MyAccountForm'
 import Warning from '../../Common/Warning'
@@ -25,7 +25,7 @@ class MyAccount extends Component {
 
   submitForm(data) {
     let url = this.props.user.url
-    let method = 'put'
+    let method = 'patch'
     let headers = new Headers({
       'Content-Type': 'application/json',
       Authorization: 'Token ' + this.props.token
@@ -67,6 +67,13 @@ class MyAccount extends Component {
           <h1>My Account</h1>
         </Col>
         <MyAccountForm user={user} submitForm={this.submitForm} />
+        <Col smOffset={2}>
+          <Link to="/users/myaccount/changepassword" style={{paddingLeft: "5px"}}>
+            <Button bsStyle="primary">
+              Change Password
+            </Button>
+          </Link>
+        </Col>
       </div>
     );
   }

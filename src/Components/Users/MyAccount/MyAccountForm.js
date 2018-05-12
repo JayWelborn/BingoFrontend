@@ -38,7 +38,7 @@ export default class MyAccountForm extends Component {
         <HorizontalGroup
           id="email" type="email" label="Email"
           defaultValue={this.state.email}  onChange={this.handleChange}/>
-        <HorizontalButton value="Update Account" />
+        <HorizontalButton value="Update Account Info" />
       </Form>
     );
   }
