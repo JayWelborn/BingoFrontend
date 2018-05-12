@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Button} from 'react-bootstrap'
+import {Col, Form} from 'react-bootstrap'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
@@ -7,7 +7,7 @@ import {validatePasswords} from '../../Utils/validatePasswords'
 import {validateRegistrationData, listWarnings, register} from '../../Utils/register'
 import {logUserIn} from '../../Redux/actions'
 
-import FieldGroup, {PasswordGroup} from '../Common/Forms/FieldGroup'
+import {HorizontalGroup, PasswordGroup, HorizontalButton} from '../Common/Forms/FieldGroup'
 import Warning from '../Common/Warning'
 
 
@@ -65,13 +65,15 @@ class RegistrationPage extends Component {
     } else {
       return (
         <div className="card">
-          <h1>Register</h1>
+          <Col smOffset={2} sm={10}>
+            <h1>Register</h1>
+          </Col>
           {alerts}
-          <form id="registration-form" onSubmit={this.handleSubmit}>
-            <FieldGroup
+          <Form horizontal id="registration-form" onSubmit={this.handleSubmit}>
+            <HorizontalGroup
               id="username" type="text" label="Username"
               placeholder="Username" onChange={this.handleChange} />
-            <FieldGroup
+            <HorizontalGroup
               id="email" type="email" label="Email"
               placeholder="Email Address" onChange={this.handleChange} />
             <PasswordGroup
@@ -80,8 +82,8 @@ class RegistrationPage extends Component {
             <PasswordGroup
               validate={this.getValidationState} id="password2"
               label="Repeat Password" type="password" onChange={this.handleChange} />
-            <Button bsStyle="primary" type="submit">Register</Button>
-          </form>
+            <HorizontalButton value="Register" />
+          </Form>
         </div>
       );
     }

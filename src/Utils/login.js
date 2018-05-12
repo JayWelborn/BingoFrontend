@@ -45,4 +45,7 @@ export function login(username, password, logUserIn) {
       })
     })
   })
+  .catch(error => {
+    console.log(error)
+  })
 }

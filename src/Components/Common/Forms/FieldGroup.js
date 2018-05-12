@@ -27,15 +27,20 @@ export default class FieldGroup extends Component {
 
 export class PasswordGroup extends Component {
   render() {
+    let label = this.props.label
     let help = this.props.help
     let props = {...this.props}
     delete props.validate
 
     return (
-      <FormGroup validationState = {this.props.validate()}>
-        <ControlLabel>{this.props.label}</ControlLabel>
-        <FormControl {...props}/>
-        {help && <HelpBlock>{help}</HelpBlock>}
+      <FormGroup validationState={this.props.validate()}>
+        <Col componentClass={ControlLabel} sm={2}>
+          {label}
+        </Col>
+        <Col sm={10}>
+          <FormControl {...props} />
+          {help && <HelpBlock>{help}</HelpBlock>}
+        </Col>
       </FormGroup>
     )
   }

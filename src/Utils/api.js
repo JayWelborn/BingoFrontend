@@ -21,9 +21,17 @@ function apiCall(endpoint, method, headers={}, body={}) {
     headers: headers,
     mode: 'cors',
     body: body,
-  }).then(response => {
+  }).then(handleErrors)
+  .then(response => {
     return response.json()
   })
+}
+
+function handleErrors(response) {
+  if (!response.ok) {
+    throw Error(response.statusText)
+  }
+  return response
 }
 
 export {apiCall, apiRoot};

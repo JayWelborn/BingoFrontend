@@ -45,7 +45,11 @@ export default class LogIn extends Component {
    */
   handleSubmit(event) {
     event.preventDefault()
-    login(this.state.username, this.state.password, this.logUserIn)
+    try {
+      login(this.state.username, this.state.password, this.logUserIn)
+    } catch(error) {
+      console.log(error)
+    }
   }
 
   /**

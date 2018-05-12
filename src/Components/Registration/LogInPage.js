@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import {Button} from 'react-bootstrap'
+import {Col, Form} from 'react-bootstrap'
 import {Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 import {logUserIn} from '../../Redux/actions'
 import {login} from '../../Utils/login'
 
-import FieldGroup from '../Common/Forms/FieldGroup'
+import {HorizontalGroup, HorizontalButton} from '../Common/Forms/FieldGroup'
 
 
 class LogInPage extends Component {
@@ -27,7 +27,11 @@ class LogInPage extends Component {
 
   handleSubmit(event) {
     event.preventDefault()
-    login(this.state.username, this.state.password, this.props.logUserIn)
+    try {
+      login(this.state.username, this.state.password, this.props.logUserIn)
+    } catch(error) {
+      this.setState({loginFailed: true})
+    }
   }
 
   render() {
@@ -36,16 +40,18 @@ class LogInPage extends Component {
     } else {
       return (
         <div className="card">
-          <h1>Login</h1>
-          <form id="login-form" onSubmit={this.handleSubmit}>
-            <FieldGroup
+          <Col smOffset={2} sm={10}>
+            <h1>Login</h1>
+          </Col>
+          <Form horizontal id="login-form" onSubmit={this.handleSubmit}>
+            <HorizontalGroup
               id="username" type="text" label="Username"
               placeholder="Username" onChange={this.handleChange} />
-            <FieldGroup
+            <HorizontalGroup
               id="password" type="password" label="Password"
               onChange={this.handleChange} />
-            <Button bsStyle="primary" type="submit">Log In</Button>
-          </form>
+            <HorizontalButton value="Log In" />
+          </Form>
         </div>
       )
     }

@@ -17,6 +17,7 @@ class MyAccount extends Component {
 
     this.state = {
       submitted: false,
+      formvalid: undefined
     }
     this.submitForm = this.submitForm.bind(this)
     this.updateUser = this.props.updateUser.bind(this)
@@ -24,8 +25,9 @@ class MyAccount extends Component {
 
   submitForm(data) {
     let url = this.props.user.url
+    let method = 'put'
     let headers = new Headers({
-      'Content-Type': 'applicatoin/json',
+      'Content-Type': 'application/json',
       Authorization: 'Token ' + this.props.token
     })
     let body = JSON.stringify({
@@ -33,17 +35,34 @@ class MyAccount extends Component {
       email: data.email
     })
 
-    console.log(data)
+    apiCall(url, method, headers, body)
+    .then(user => {
+      this.updateUser(user)
+      this.setState({submitted: true, formvalid: true})
+    })
+    .catch(error => {
+      this.setState({submitted: true, formvalid: false, error: error})
+      console.log(error)
+    })
   }
 
   render() {
     let user = this.props.user
+    let warning = ''
+
+    if (this.state.submitted) {
+      this.state.formvalid ?
+      warning = <Warning cat='success' message='Account Updated' />
+      :
+      warning = <Warning cat='danger' message={'Form Invalid' + this.state.error} />
+    }
 
     if (!this.props.userLoggedIn) {
       return <Redirect to="/registration/login" />
     }
     return (
       <div className="card">
+        {warning}
         <Col smOffset={2} sm={10}>
           <h1>My Account</h1>
         </Col>
