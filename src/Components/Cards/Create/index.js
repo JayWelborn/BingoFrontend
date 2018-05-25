@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 
 import CardForm from './CardForm'
@@ -28,18 +28,20 @@ class CreateContainer extends Component {
     let body = JSON.stringify(data)
     apiCall(createURL, createMethod, headers, body)
     .then(responseData => {
-      console.log(responseData)
-      this.setState({submitted: true})
+      this.setState({
+        submitted: true,
+        cardId: responseData.id
+      })
     })
   }
 
   render() {
     return (
       <div className="card">
-        <h1>Create Card</h1>
+        <h1>CreatCone Card</h1>
         {
           this.state.submitted ?
-          <div>Form Submitted</div>
+          <Redirect to={'/cards/' + this.state.cardId} />
           :
           <CardForm submitForm={this.submitForm}/>
         }

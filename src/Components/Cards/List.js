@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import SearchFilter from '../Common/SearchFilter'
 import CardList from '../Common/CardList'
 
-import {apiCall, apiRoot} from '../../Utils/api.js'
+import {apiCall, apiRoot} from '../../Utils/api'
 
 /**
  * Display a searchable list of bingo cards

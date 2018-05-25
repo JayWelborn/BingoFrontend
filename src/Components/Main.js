@@ -9,7 +9,7 @@ import {
 // import components
 import Home from './Home/'
 import About from './Home/About'
-import Contact from './Home/Contact'
+import Contact from './Home/Contact/'
 import Cards from './Cards/'
 import Registration from './Registration/'
 import Users from './Users'

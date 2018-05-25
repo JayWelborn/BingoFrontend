@@ -51,11 +51,14 @@ export default class ProfileDetail extends Component {
 
   render() {
     let content = <Loader />
-    if (this.state.user && this.state.profile && this.state.cards) {
+    if (this.state.user && this.state.profile) {
       content = [
         <DisplayProfile key={0} user={this.state.user} profile={this.state.profile} />,
-        <CardList key={1} cards={this.state.cards} />
       ]
+    }
+
+    if (this.state.cards) {
+      content.push(<CardList key={1} cards={this.state.cards} />)
     }
     return (
       <div className="card">

@@ -3,7 +3,7 @@ import {connect}            from 'react-redux'
 
 import Loader from './Loader'
 
-import {apiCall} from '../../Utils/api.js'
+import {apiCall} from '../../Utils/api'
 
 
 /**

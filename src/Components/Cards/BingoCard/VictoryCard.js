@@ -9,11 +9,11 @@ export default class VictoryCard extends Component {
 
   render() {
     return (
-      <div class='victory'>
+      <div className='victory'>
         <h1>Victory!</h1>
         <img src="/images/svg/party.svg" alt="victory"/>
         <h5><Link to='/cards/'>More BingoCards</Link></h5>
-        <audio src="/audio/victory.mp3" autoplay="true"></audio>
+        <audio src="/audio/victory.mp3" autoPlay="true"></audio>
       </div>
     );
   }

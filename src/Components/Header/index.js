@@ -40,6 +40,10 @@ export default class Header extends Component {
               <NavItem>Cards</NavItem>
             </LinkContainer>
 
+            <LinkContainer activeClassName="active" to="/users">
+              <NavItem>Bingonauts</NavItem>
+            </LinkContainer>
+
           </Nav>
 
           <Nav pullRight={true}>

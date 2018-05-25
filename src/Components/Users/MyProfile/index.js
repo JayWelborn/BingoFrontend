@@ -34,7 +34,6 @@ class MyProfile extends Component {
     }
     apiCall(url, method, headers, body)
     .then(response => {
-      console.log(response)
       this.updateProfile(response)
       this.setState({submitted: true})
     })
