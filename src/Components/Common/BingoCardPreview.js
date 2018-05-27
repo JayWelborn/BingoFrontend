@@ -98,7 +98,7 @@ class BingoCardPreview extends Component {
           profile && creator
           ?
           <span>
-          <img src={profile.picture} alt={creator.username}/>
+          <img src={profile.picture ? profile.picture : '/images/sillhouette.png'} alt={creator.username}/>
             <h5><a href={"/cards/" + card.id}>{card.title}</a></h5>
             created by:&nbsp;
             <a href={"/users/" + creator.id}>{creator.username}</a>
