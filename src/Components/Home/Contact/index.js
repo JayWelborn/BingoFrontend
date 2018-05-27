@@ -32,20 +32,25 @@ class Contact extends Component {
     let body = new FormData()
     for (var key in data) {
       body.append(key, data[key])
-      console.log(body)
     }
+    apiCall(url, method, headers, body)
+      .then(returnData => {
+        console.log(returnData)
+        this.setState({submitted: true})
+      }
+    )
   }
 
   render() {
     return (
       <div className="card">
-        <h1>Contact</h1>
-        {
+      {
           this.state.submitted ?
           <Warning cat='success' message='Email Sent' />
           :
           ''
         }
+        <h1>Contact</h1>
         <ContactForm submitForm={this.submitForm} user={this.props.user} />
       </div>
     );

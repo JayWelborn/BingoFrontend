@@ -38,7 +38,7 @@ class CreateContainer extends Component {
   render() {
     return (
       <div className="card">
-        <h1>CreatCone Card</h1>
+        <h1>Create Card</h1>
         {
           this.state.submitted ?
           <Redirect to={'/cards/' + this.state.cardId} />
