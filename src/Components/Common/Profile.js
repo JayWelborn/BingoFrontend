@@ -7,7 +7,7 @@ export default class Profile extends Component {
 
     return (
       <aside className='profile-sidebar'>
-       <img src={profile.picture} alt={user.username}/>
+       <img src={profile.picture ? profile.picture : '/images/sillhouette.png'} alt={user.username}/>
        <div>
          <a href={"/users/" + user.id}>
           <h6>{user.username}</h6>

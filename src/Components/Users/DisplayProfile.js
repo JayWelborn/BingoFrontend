@@ -8,7 +8,7 @@ export default class DisplayProfile extends Component {
     let profile = this.props.profile
     return (
       <div className="display-profile">
-        <img src={profile.picture} alt={user.username}/>
+        <img src={profile.picture ? profile.picture : '/images/sillhouette.png'} alt={user.username}/>
         <section>
           <h1>{user.username}</h1>
           {

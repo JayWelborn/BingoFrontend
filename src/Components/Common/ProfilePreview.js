@@ -48,7 +48,7 @@ class ProfilePreview extends Component {
           profile && user
           ?
           <span>
-            <img src={profile.picture} alt={user.username}/>
+            <img src={profile.picture ? profile.picture : '/images/sillhouette.png'} alt={user.username}/>
             <h5><Link to={"/users/" + user.id}>{user.username}</Link></h5>
           </span>
           :
