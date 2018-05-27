@@ -1,6 +1,8 @@
 function getApiRoot() {
   if (window.location.href.includes('localhost')) {
     return 'http://localhost:8000/api/';
+  } else {
+    return 'https://bingoapp.pythonanywhere.com/api/'
   }
 }
 
