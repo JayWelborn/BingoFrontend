@@ -18,12 +18,18 @@ const apiRoot = getApiRoot();
  */
 function apiCall(endpoint, method, headers={}, body={}) {
 
-  return fetch(endpoint, {
+  let request = {
     method: method,
     headers: headers,
-    mode: 'cors',
-    body: body,
-  }).then(handleErrors)
+    mode: 'cors'
+  }
+
+  if (method != 'get') {
+    request['body'] = body
+  }
+
+  return fetch(endpoint, request)
+  .then(handleErrors)
   .then(response => {
     return response.json()
   })
