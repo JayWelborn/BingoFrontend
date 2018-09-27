@@ -164,7 +164,20 @@ body {
 
 .footer {
   width: 100%;
-  margin-bottom: 0px; }
+  margin-bottom: 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row no-wrap;
+          flex-flow: row no-wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around; }
+  .footer ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block; }
 
 .navbar-default, .navbar-brand {
   min-height: 70px; }

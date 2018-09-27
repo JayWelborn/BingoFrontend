@@ -1,5 +1,14 @@
 .footer {
   @extend .card;
   width: 100%;
-  margin-bottom: 0px
+  margin-bottom: 0px;
+  display: flex;
+  flex-flow: row no-wrap;
+  justify-content: space-around;
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    display: inline-block;
+  }
 }

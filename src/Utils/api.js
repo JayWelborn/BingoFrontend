@@ -24,7 +24,7 @@ function apiCall(endpoint, method, headers={}, body={}) {
     mode: 'cors'
   }
 
-  if (method != 'get') {
+  if (method !== 'get') {
     request['body'] = body
   }
 
