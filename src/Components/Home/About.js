@@ -9,7 +9,7 @@ export default class About extends Component {
       <div className="card">
         <h1>About Bingo</h1>
         <p>
-            My name is <a href="ttp/www.jaywelborn.com" target="blank">Jay Welborn</a>.
+            My name is <a href="http://www.jaywelborn.com" target="blank">Jay Welborn</a>.
             I work for a very large organization that has very frequent required training sessions.
             These sessions are delivered to auditoriums full of people, and each one is the same every single year.
             After seven years of this one of my colleagues, let&rsquo;s call him &ldquo;Jimothy&rdquo; started making
