@@ -1,6 +1,5 @@
 .card, .footer, .victory, .card-inverted, .navbar {
-  -webkit-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.5); }
 
 .card, .footer, .victory, .card-inverted {
   border-radius: 5px;
@@ -108,17 +107,13 @@ body {
 
 .page-body {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: top;
-      -ms-flex-align: top;
           align-items: top; }
   .page-body main.container {
     margin: 0; }
@@ -152,28 +147,22 @@ body {
 
 .card-list {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
           justify-content: space-between; }
 
 .footer {
   width: 100%;
   margin-bottom: 0px;
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row no-wrap;
           flex-flow: row no-wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around; }
+  justify-content: space-around; }
   .footer ul {
     list-style-type: none;
     padding: 0;
@@ -186,14 +175,11 @@ body {
     height: 70px; }
     .navbar-default .navbar-nav > li a, .navbar-brand .navbar-nav > li a {
       display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
       height: 100%;
       -webkit-box-pack: center;
-          -ms-flex-pack: center;
               justify-content: center;
       -webkit-box-align: center;
-          -ms-flex-align: center;
               align-items: center; }
   @media (max-width: 768px) {
     .navbar-default, .navbar-brand {
@@ -220,12 +206,10 @@ body {
   border: 1px solid #111;
   padding: 10px;
   text-align: center;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box; }
+  box-sizing: border-box; }
 
 .bingo-card {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 100%; }
   @media (max-width: 768px) {
     .bingo-card {
@@ -235,8 +219,7 @@ body {
     padding-top: 40px;
     background-color: #0081c7;
     color: #F6F3F1;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box; }
+    box-sizing: border-box; }
     @media (max-width: 768px) {
       .bingo-card th {
         padding: 20px; }
@@ -285,11 +268,9 @@ body {
 
 .profile-sidebar {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column;
           flex-flow: column;
   text-align: right;
   width: 200px;
@@ -306,8 +287,7 @@ body {
 
 @media (max-width: 1140px) {
   .profile-sidebar:first-child {
-    -webkit-box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 10px -4px rgba(0, 0, 0, 0.5);
     width: 40%;
     min-width: 300px;
     background-color: #f8f7f7;
@@ -317,11 +297,9 @@ body {
     margin-bottom: 5px;
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
-        -ms-flex-flow: row;
             flex-flow: row;
     text-align: left;
     -webkit-box-pack: left;
-        -ms-flex-pack: left;
             justify-content: left; }
     .profile-sidebar:first-child h6 {
       margin-bottom: 0px; }
@@ -378,17 +356,13 @@ body {
 
 #card-create {
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
           flex-flow: row wrap;
   -webkit-box-align: center;
-      -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
           justify-content: space-between;
   margin-bottom: 20px; }
   #card-create span {
@@ -415,19 +389,14 @@ body {
   top: 25%;
   left: 25%;
   display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-flow: column wrap;
           flex-flow: column wrap;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  justify-content: space-around;
   -webkit-box-align: center;
-      -ms-flex-align: center;
           align-items: center;
-  -webkit-box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); }
+  box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); }
   .victory h1, .victory h5 {
     margin: 0px; }
   .victory img {
@@ -435,8 +404,7 @@ body {
 
 @-webkit-keyframes slide-up {
   0% {
-    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
     -webkit-transform: translateY(200px) scale(0.0001);
             transform: translateY(200px) scale(0.0001);
     opacity: 0; }
@@ -449,13 +417,11 @@ body {
     -webkit-transform: translateY(0px) scale(1);
             transform: translateY(0px) scale(1);
     opacity: 1;
-    -webkit-box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); } }
+    box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); } }
 
 @keyframes slide-up {
   0% {
-    -webkit-box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.5);
     -webkit-transform: translateY(200px) scale(0.0001);
             transform: translateY(200px) scale(0.0001);
     opacity: 0; }
@@ -468,8 +434,7 @@ body {
     -webkit-transform: translateY(0px) scale(1);
             transform: translateY(0px) scale(1);
     opacity: 1;
-    -webkit-box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5);
-            box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); } }
+    box-shadow: 0px 0px 100px 50px rgba(0, 0, 0, 0.5); } }
 
 .display-profile img {
   height: 150px;
