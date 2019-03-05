@@ -9,15 +9,15 @@ export default class Footer extends Component {
       <footer className="footer">
         <section>
           <ul>
-            <li><a class="nav-link" href="/">Home</a></li>
-            <li><a class="nav-link" href="/about">About</a></li>
-            <li><a class="nav-link" href="/contact">Contact</a></li>
+            <li><a className="nav-link" href="/">Home</a></li>
+            <li><a className="nav-link" href="/about">About</a></li>
+            <li><a className="nav-link" href="/contact">Contact</a></li>
           </ul>
         </section>
         <section>
           <ul>
-            <li><a class="nav-link" href="/cards">Cards</a></li>
-            <li><a class="nav-link" href="href=/users">Bingonauts</a></li>
+            <li><a className="nav-link" href="/cards">Cards</a></li>
+            <li><a className="nav-link" href="href=/users">Bingonauts</a></li>
           </ul>
         </section>
         <section>

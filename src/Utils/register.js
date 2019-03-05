@@ -25,7 +25,7 @@ export function register(data, logUserIn) {
 
 export function validateRegistrationData(data) {
   if (!data.username || !data.email || !data.password1 || !data.password2 ||
-      data.password1 !== data.password2 || data.password1.length <= 8) {
+      data.password1 !== data.password2 || data.password1.length < 8) {
     return false
   }
   return true

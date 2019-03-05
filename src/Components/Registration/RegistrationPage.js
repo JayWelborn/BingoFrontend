@@ -39,6 +39,7 @@ class RegistrationPage extends Component {
       password1: this.state.password1,
       password2: this.state.password2
     }
+
     if (validateRegistrationData(data)) {
       register(data, this.logUserIn)
     } else {
